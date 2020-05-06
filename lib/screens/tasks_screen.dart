@@ -7,7 +7,17 @@ class TasksScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
       floatingActionButton: FloatingActionButton(
-        onPressed: null,
+        onPressed: () {
+          // Slide up input for new task
+          showModalBottomSheet(
+            context: context,
+            builder: (context) => Container(
+              child: Center(
+                child: Text('I am the bottom sheet'),
+              ),
+            ),
+          );
+        },
         backgroundColor: Colors.lightBlueAccent,
         child: Icon(Icons.add),
       ),
