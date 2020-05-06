@@ -11,8 +11,16 @@ class TasksScreen extends StatelessWidget {
         onPressed: () {
           // Slide up input for new task
           showModalBottomSheet(
+            isScrollControlled: true,
             context: context,
-            builder: (context) => AddTaskScreen(),
+            builder: (context) => SingleChildScrollView(
+              child: Container(
+                padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom,
+                ),
+                child: AddTaskScreen(),
+              ),
+            ),
           );
         },
         backgroundColor: Colors.lightBlueAccent,
