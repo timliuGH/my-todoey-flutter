@@ -23,4 +23,9 @@ class Tasks with ChangeNotifier {
     _tasks[index].toggleIsDone();
     notifyListeners();
   }
+
+  void deleteTask(int index) {
+    _tasks.removeAt(index);
+    notifyListeners();
+  }
 }
