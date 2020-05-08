@@ -18,4 +18,9 @@ class Tasks with ChangeNotifier {
     _tasks.add(Task(taskString: taskString));
     notifyListeners();
   }
+
+  void updateTask(int index) {
+    _tasks[index].toggleIsDone();
+    notifyListeners();
+  }
 }
